@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2: Conceptos Básicos de Python</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white flex min-h-screen">
+    <aside class="w-60 p-5 fixed top-5 left-5 bottom-5 overflow-y-auto z-10">
+        <h1 class="text-xl mb-4">Curso de <span class="text-yellow-400">PY</span><span class="text-blue-500">THON</span> + ML</h1>
+        <h2 class="text-blue-500 text-lg mb-4">Índice del Curso</h2>
+        <nav>
+            <ul>
+                <li>
+                    <input type="checkbox" id="tema1" class="hidden">
+                    <label for="tema1" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 1: Historia y Cronología de Python</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema1.html#section1" class="block p-2 hover:text-blue-500 transition">Historia y Cronología</a></li>
+                        <li><a href="tema1.html#section2" class="block p-2 hover:text-blue-500 transition">Gráfica TIOBE</a></li>
+                        <li><a href="tema1.html#section3" class="block p-2 hover:text-blue-500 transition">Rubros donde Python es Utilizado</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema2" class="hidden" checked>
+                    <label for="tema2" class="block cursor-pointer p-2 hover:bg-gray-800 transition active-tema">Tema 2: Conceptos Básicos de Python</label>
+                    <ul class="max-h-[500px] overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="#section4" class="block p-2 hover:text-blue-500 transition">Tipos de Datos</a></li>
+                        <li><a href="#section5" class="block p-2 hover:text-blue-500 transition">Estructuras de Datos</a></li>
+                        <li><a href="#section6" class="block p-2 hover:text-blue-500 transition">Operadores Aritméticos</a></li>
+                        <li><a href="#section7" class="block p-2 hover:text-blue-500 transition">Operadores Lógicos</a></li>
+                        <li><a href="#section8" class="block p-2 hover:text-blue-500 transition">Condicionales</a></li>
+                        <li><a href="#section9" class="block p-2 hover:text-blue-500 transition">Estructuras de Control</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema3" class="hidden">
+                    <label for="tema3" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 3: Funciones y Algoritmos</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema3.html#section10" class="block p-2 hover:text-blue-500 transition">Qué es una Función</a></li>
+                        <li><a href="tema3.html#section11" class="block p-2 hover:text-blue-500 transition">Qué es un Algoritmo</a></li>
+                        <li><a href="tema3.html#section12" class="block p-2 hover:text-blue-500 transition">Qué es el Pseudocódigo</a></li>
+                        <li><a href="tema3.html#section13" class="block p-2 hover:text-blue-500 transition">Ejercicio FizzBuzz</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="flex-1 ml-72 p-5 overflow-y-auto bg-gray-900 border-l border-white">
+        <section id="section4" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Tipos de Datos</div>
+            <table class="w-full border-collapse text-sm">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="border border-white p-2">Concepto</th>
+                        <th class="border border-white p-2">Descripción</th>
+                        <th class="border border-white p-2">Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-800">
+                        <td class="border border-white p-2">Tipos de Datos</td>
+                        <td class="border border-white p-2">En Python, los tipos de datos básicos incluyen enteros, flotantes, cadenas de texto, booleanos, etc. Python es dinámicamente tipado, por lo que no necesitas declarar el tipo.</td>
+                        <td class="border border-white p-2"><pre><code>a = 5  # Entero (int)
+b = 3.14  # Flotante (float)
+c = "Hola"  # Cadena (str)
+d = True  # Booleano (bool)
+print(type(a))  # Output: &lt;class 'int'&gt;</code></pre></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="section5" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Estructuras de Datos</div>
+            <table class="w-full border-collapse text-sm">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="border border-white p-2">Concepto</th>
+                        <th class="border border-white p-2">Descripción</th>
+                        <th class="border border-white p-2">Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-800">
+                        <td class="border border-white p-2">Estructuras de Datos</td>
+                        <td class="border border-white p-2">Python ofrece estructuras como listas, tuplas, diccionarios y conjuntos para almacenar colecciones de datos.</td>
+                        <td class="border border-white p-2"><pre><code>lista = [1, 2, 3]  # Lista (mutable)
+tupla = (1, 2, 3)  # Tupla (inmutable)
+diccionario = {"clave": "valor"}  # Diccionario
+conjunto = {1, 2, 3}  # Set (únicos, no ordenados)
+print(lista[0])  # Output: 1</code></pre></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="section6" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Operadores Aritméticos</div>
+            <table class="w-full border-collapse text-sm">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="border border-white p-2">Concepto</th>
+                        <th class="border border-white p-2">Descripción</th>
+                        <th class="border border-white p-2">Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-800">
+                        <td class="border border-white p-2">Operadores Aritméticos</td>
+                        <td class="border border-white p-2">Los operadores aritméticos permiten realizar cálculos matemáticos: suma (+), resta (-), multiplicación (*), división (/), módulo (%), exponente (**), división entera (//).</td>
+                        <td class="border border-white p-2"><pre><code>a = 10
+b = 3
+print(a + b)  # Suma: 13
+print(a - b)  # Resta: 7
+print(a * b)  # Multiplicación: 30
+print(a / b)  # División: 3.333...
+print(a % b)  # Módulo: 1
+print(a ** b)  # Exponente: 1000
+print(a // b)  # División entera: 3</code></pre></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="section7" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Operadores Lógicos</div>
+            <table class="w-full border-collapse text-sm">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="border border-white p-2">Concepto</th>
+                        <th class="border border-white p-2">Descripción</th>
+                        <th class="border border-white p-2">Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-800">
+                        <td class="border border-white p-2">Operadores Lógicos</td>
+                        <td class="border border-white p-2">Los operadores lógicos se usan para combinar expresiones booleanas: and (y), or (o), not (no).</td>
+                        <td class="border border-white p-2"><pre><code>a = True
+b = False
+print(a and b)  # False
+print(a or b)  # True
+print(not a)  # False</code></pre></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="section8" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Condicionales</div>
+            <table class="w-full border-collapse text-sm">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="border border-white p-2">Concepto</th>
+                        <th class="border border-white p-2">Descripción</th>
+                        <th class="border border-white p-2">Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-800">
+                        <td class="border border-white p-2">Condicionales</td>
+                        <td class="border border-white p-2">Las condicionales permiten ejecutar código basado en condiciones: if, elif, else.</td>
+                        <td class="border border-white p-2"><pre><code>edad = 18
+if edad >= 18:
+    print("Mayor de edad")
+elif edad >= 13:
+    print("Adolescente")
+else:
+    print("Menor")  # Output: Mayor de edad</code></pre></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="section9" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Estructuras de Control</div>
+            <table class="w-full border-collapse text-sm">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="border border-white p-2">Concepto</th>
+                        <th class="border border-white p-2">Descripción</th>
+                        <th class="border border-white p-2">Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-800">
+                        <td class="border border-white p-2">Estructuras de Control</td>
+                        <td class="border border-white p-2">Incluyen bucles como for y while para repetir acciones, y break/continue para controlar el flujo.</td>
+                        <td class="border border-white p-2"><pre><code># For loop
+for i in range(3):
+    print(i)  # 0 1 2
+
+# While loop
+cont = 0
+while cont &lt; 3:
+    print(cont)
+    cont += 1  # 0 1 2</code></pre></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

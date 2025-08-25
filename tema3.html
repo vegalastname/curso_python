@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3: Funciones y Algoritmos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white flex min-h-screen">
+    <aside class="w-60 p-5 fixed top-5 left-5 bottom-5 overflow-y-auto z-10">
+        <h1 class="text-xl mb-4">Curso de <span class="text-yellow-400">PY</span><span class="text-blue-500">THON</span> + ML</h1>
+        <h2 class="text-blue-500 text-lg mb-4">Índice del Curso</h2>
+        <nav>
+            <ul>
+                <li>
+                    <input type="checkbox" id="tema1" class="hidden">
+                    <label for="tema1" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 1: Historia y Cronología de Python</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema1.html#section1" class="block p-2 hover:text-blue-500 transition">Historia y Cronología</a></li>
+                        <li><a href="tema1.html#section2" class="block p-2 hover:text-blue-500 transition">Gráfica TIOBE</a></li>
+                        <li><a href="tema1.html#section3" class="block p-2 hover:text-blue-500 transition">Rubros donde Python es Utilizado</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema2" class="hidden">
+                    <label for="tema2" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 2: Conceptos Básicos de Python</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema2.html#section4" class="block p-2 hover:text-blue-500 transition">Tipos de Datos</a></li>
+                        <li><a href="tema2.html#section5" class="block p-2 hover:text-blue-500 transition">Estructuras de Datos</a></li>
+                        <li><a href="tema2.html#section6" class="block p-2 hover:text-blue-500 transition">Operadores Aritméticos</a></li>
+                        <li><a href="tema2.html#section7" class="block p-2 hover:text-blue-500 transition">Operadores Lógicos</a></li>
+                        <li><a href="tema2.html#section8" class="block p-2 hover:text-blue-500 transition">Condicionales</a></li>
+                        <li><a href="tema2.html#section9" class="block p-2 hover:text-blue-500 transition">Estructuras de Control</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema3" class="hidden" checked>
+                    <label for="tema3" class="block cursor-pointer p-2 hover:bg-gray-800 transition active-tema">Tema 3: Funciones y Algoritmos</label>
+                    <ul class="max-h-[500px] overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="#section10" class="block p-2 hover:text-blue-500 transition">Qué es una Función</a></li>
+                        <li><a href="#section11" class="block p-2 hover:text-blue-500 transition">Qué es un Algoritmo</a></li>
+                        <li><a href="#section12" class="block p-2 hover:text-blue-500 transition">Qué es el Pseudocódigo</a></li>
+                        <li><a href="#section13" class="block p-2 hover:text-blue-500 transition">Ejercicio FizzBuzz</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="flex-1 ml-72 p-5 overflow-y-auto bg-gray-900 border-l border-white">
+        <section id="section10" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Qué es una Función</div>
+            <div class="concept-desc text-base mb-5">Una función en Python es un bloque de código reutilizable que realiza una tarea específica. Se define con 'def' y puede recibir parámetros y retornar valores.</div>
+            <div class="example">
+                <div class="example-title text-yellow-400 text-lg mb-2">Ejemplo:</div>
+                <pre><code>def suma(a, b):
+    return a + b
+
+resultado = suma(5, 3)
+print(resultado)  # Output: 8</code></pre>
+            </div>
+        </section>
+        <section id="section11" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Qué es un Algoritmo</div>
+            <div class="concept-desc text-base mb-5">Un algoritmo es una secuencia de pasos lógicos para resolver un problema. En programación, es el "plan" que sigue el código para lograr un objetivo, como ordenar una lista.</div>
+            <div class="example">
+                <div class="example-title text-yellow-400 text-lg mb-2">Ejemplo (Algoritmo de burbuja para ordenar):</div>
+                <pre><code>def burbuja(lista):
+    n = len(lista)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if lista[j] > lista[j+1]:
+                lista[j], lista[j+1] = lista[j+1], lista[j]
+    return lista
+
+print(burbuja([3, 1, 2]))  # Output: [1, 2, 3]</code></pre>
+            </div>
+        </section>
+        <section id="section12" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Qué es el Pseudocódigo</div>
+            <div class="concept-desc text-base mb-5">El pseudocódigo es una descripción de alto nivel de un algoritmo o programa, escrita en un lenguaje similar al humano pero con estructuras de programación. No es código ejecutable, sino una forma de planificar la lógica antes de implementarla en un lenguaje real como Python. Ayuda a enfocarse en la lógica sin preocuparse por la sintaxis específica.</div>
+            <div class="example">
+                <div class="example-title text-yellow-400 text-lg mb-2">Características:</div>
+                <ul class="list-disc pl-5 text-sm">
+                    <li>Usa palabras clave como "si", "entonces", "para", "mientras".</li>
+                    <li>No depende de un lenguaje de programación específico.</li>
+                    <li>Es útil para diseñar algoritmos y depurar lógica.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="section13" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Ejercicio FizzBuzz</div>
+            <div class="concept-desc text-base mb-5">FizzBuzz es un ejercicio clásico para practicar lógica de programación. El objetivo es imprimir números del 1 al 100, pero reemplazar múltiplos de 3 por "Fizz", múltiplos de 5 por "Buzz", y múltiplos de ambos por "FizzBuzz".</div>
+            <div class="example mb-5">
+                <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                <pre><code>Para cada número i desde 1 hasta 100:
+    Si i es múltiplo de 3 y de 5:
+        Imprimir "FizzBuzz"
+    Sino si i es múltiplo de 3:
+        Imprimir "Fizz"
+    Sino si i es múltiplo de 5:
+        Imprimir "Buzz"
+    Sino:
+        Imprimir i</code></pre>
+            </div>
+            <div class="example">
+                <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                <pre><code>for i in range(1, 101):
+    if i % 3 == 0 and i % 5 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)</code></pre>
+                <div class="text-sm mt-2">Este código usa un bucle for, condicionales y operadores módulo (%). Ejecutándolo, obtendrías una lista como: 1, 2, Fizz, 4, Buzz, ..., FizzBuzz para 15, etc.</div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

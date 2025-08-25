@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Ejercicios de Algoritmos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white flex min-h-screen">
+    <aside class="w-60 p-5 fixed top-5 left-5 bottom-5 overflow-y-auto z-10">
+        <h1 class="text-xl mb-4">Curso de <span class="text-yellow-400">PY</span><span class="text-blue-500">THON</span> + ML</h1>
+        <h2 class="text-blue-500 text-lg mb-4">Índice del Curso</h2>
+        <nav>
+            <ul>
+                <li>
+                    <input type="checkbox" id="tema1" class="hidden">
+                    <label for="tema1" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 1: Historia y Cronología de Python</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema1.html#section1" class="block p-2 hover:text-blue-500 transition">Historia y Cronología</a></li>
+                        <li><a href="tema1.html#section2" class="block p-2 hover:text-blue-500 transition">Gráfica TIOBE</a></li>
+                        <li><a href="tema1.html#section3" class="block p-2 hover:text-blue-500 transition">Rubros donde Python es Utilizado</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema2" class="hidden">
+                    <label for="tema2" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 2: Conceptos Básicos de Python</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema2.html#section4" class="block p-2 hover:text-blue-500 transition">Tipos de Datos</a></li>
+                        <li><a href="tema2.html#section5" class="block p-2 hover:text-blue-500 transition">Estructuras de Datos</a></li>
+                        <li><a href="tema2.html#section6" class="block p-2 hover:text-blue-500 transition">Operadores Aritméticos</a></li>
+                        <li><a href="tema2.html#section7" class="block p-2 hover:text-blue-500 transition">Operadores Lógicos</a></li>
+                        <li><a href="tema2.html#section8" class="block p-2 hover:text-blue-500 transition">Condicionales</a></li>
+                        <li><a href="tema2.html#section9" class="block p-2 hover:text-blue-500 transition">Estructuras de Control</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema3" class="hidden">
+                    <label for="tema3" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 3: Funciones y Algoritmos</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema3.html#section10" class="block p-2 hover:text-blue-500 transition">Qué es una Función</a></li>
+                        <li><a href="tema3.html#section11" class="block p-2 hover:text-blue-500 transition">Qué es un Algoritmo</a></li>
+                        <li><a href="tema3.html#section12" class="block p-2 hover:text-blue-500 transition">Qué es el Pseudocódigo</a></li>
+                        <li><a href="tema3.html#section13" class="block p-2 hover:text-blue-500 transition">Ejercicio FizzBuzz</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema4" class="hidden" checked>
+                    <label for="tema4" class="block cursor-pointer p-2 hover:bg-gray-800 transition active-tema">Tema 4: Ejercicios de Algoritmos</label>
+                    <ul class="max-h-[500px] overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="#ejercicio1" class="block p-2 hover:text-blue-500 transition">Ejercicio 1: Sumar dos números</a></li>
+                        <li><a href="#ejercicio2" class="block p-2 hover:text-blue-500 transition">Ejercicio 2: Encontrar el máximo de dos números</a></li>
+                        <li><a href="#ejercicio3" class="block p-2 hover:text-blue-500 transition">Ejercicio 3: Verificar si un número es par o impar</a></li>
+                        <li><a href="#ejercicio4" class="block p-2 hover:text-blue-500 transition">Ejercicio 4: Calcular factorial</a></li>
+                        <li><a href="#ejercicio5" class="block p-2 hover:text-blue-500 transition">Ejercicio 5: Secuencia de Fibonacci</a></li>
+                        <li><a href="#ejercicio6" class="block p-2 hover:text-blue-500 transition">Ejercicio 6: Invertir una cadena</a></li>
+                        <li><a href="#ejercicio7" class="block p-2 hover:text-blue-500 transition">Ejercicio 7: Contar vocales en una cadena</a></li>
+                        <li><a href="#ejercicio8" class="block p-2 hover:text-blue-500 transition">Ejercicio 8: Verificar palíndromo</a></li>
+                        <li><a href="#ejercicio9" class="block p-2 hover:text-blue-500 transition">Ejercicio 9: Sumar elementos de una lista</a></li>
+                        <li><a href="#ejercicio10" class="block p-2 hover:text-blue-500 transition">Ejercicio 10: Encontrar el mínimo en una lista</a></li>
+                        <li><a href="#ejercicio11" class="block p-2 hover:text-blue-500 transition">Ejercicio 11: Ordenar una lista (burbuja)</a></li>
+                        <li><a href="#ejercicio12" class="block p-2 hover:text-blue-500 transition">Ejercicio 12: Buscar un elemento en una lista</a></li>
+                        <li><a href="#ejercicio13" class="block p-2 hover:text-blue-500 transition">Ejercicio 13: Calcular área de un círculo</a></li>
+                        <li><a href="#ejercicio14" class="block p-2 hover:text-blue-500 transition">Ejercicio 14: Convertir Celsius a Fahrenheit</a></li>
+                        <li><a href="#ejercicio15" class="block p-2 hover:text-blue-500 transition">Ejercicio 15: Generar tabla de multiplicar</a></li>
+                        <li><a href="#ejercicio16" class="block p-2 hover:text-blue-500 transition">Ejercicio 16: Contar dígitos en un número</a></li>
+                        <li><a href="#ejercicio17" class="block p-2 hover:text-blue-500 transition">Ejercicio 17: Verificar si un número es primo</a></li>
+                        <li><a href="#ejercicio18" class="block p-2 hover:text-blue-500 transition">Ejercicio 18: Calcular MCD de dos números</a></li>
+                        <li><a href="#ejercicio19" class="block p-2 hover:text-blue-500 transition">Ejercicio 19: Calcular potencia de un número</a></li>
+                        <li><a href="#ejercicio20" class="block p-2 hover:text-blue-500 transition">Ejercicio 20: Imprimir patrón de estrellas (triángulo)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="flex-1 ml-72 p-5 overflow-y-auto bg-gray-900 border-l border-white">
+        <section id="ejercicio1" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej1-slide1" name="ej1-carousel" class="hidden" checked>
+                <input type="radio" id="ej1-slide2" name="ej1-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 1: Sumar dos números</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que tome dos números como entrada y devuelva su suma.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer número1
+Leer número2
+suma = número1 + número2
+Imprimir suma</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>numero1 = int(input("Ingrese el primer número: "))
+numero2 = int(input("Ingrese el segundo número: "))
+suma = numero1 + numero2
+print("La suma es:", suma)</code></pre>
+                            <div class="text-sm mt-2">Explicación: Usamos 'input()' para leer entradas del usuario, convertimos a int con 'int()'. Sumamos con '+'. Imprimimos con 'print()'.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej1-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej1-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio2" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej2-slide1" name="ej2-carousel" class="hidden" checked>
+                <input type="radio" id="ej2-slide2" name="ej2-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 2: Encontrar el máximo de dos números</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que compare dos números y devuelva el mayor.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer número1
+Leer número2
+Si número1 > número2 entonces
+    máximo = número1
+Sino
+    máximo = número2
+Imprimir máximo</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>numero1 = int(input("Ingrese el primer número: "))
+numero2 = int(input("Ingrese el segundo número: "))
+if numero1 > numero2:
+    print("El máximo es:", numero1)
+else:
+    print("El máximo es:", numero2)</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'if' compara con '>', 'else' maneja el otro caso. 'print()' muestra el resultado.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej2-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej2-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio3" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej3-slide1" name="ej3-carousel" class="hidden" checked>
+                <input type="radio" id="ej3-slide2" name="ej3-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 3: Verificar si un número es par o impar</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que determine si un número es par o impar.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer número
+Si número modulo 2 == 0 entonces
+    Imprimir "Par"
+Sino
+    Imprimir "Impar"</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>numero = int(input("Ingrese un número: "))
+if numero % 2 == 0:
+    print("El número es par")
+else:
+    print("El número es impar")</code></pre>
+                            <div class="text-sm mt-2">Explicación: '%' es módulo. 'if' verifica si resto es 0 (par).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej3-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej3-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio4" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej4-slide1" name="ej4-carousel" class="hidden" checked>
+                <input type="radio" id="ej4-slide2" name="ej4-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 4: Calcular factorial</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que calcule el factorial de un número.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer número
+factorial = 1
+Para i desde 1 hasta número
+    factorial = factorial * i
+Imprimir factorial</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>numero = int(input("Ingrese un número: "))
+factorial = 1
+for i in range(1, numero + 1):
+    factorial *= i
+print("El factorial es:", factorial)</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'for' con 'range()' itera. '*=' multiplica y asigna.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej4-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej4-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio5" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej5-slide1" name="ej5-carousel" class="hidden" checked>
+                <input type="radio" id="ej5-slide2" name="ej5-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 5: Secuencia de Fibonacci</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que genere la secuencia de Fibonacci hasta un número dado.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer n
+a = 0
+b = 1
+Imprimir a
+Imprimir b
+Para i desde 2 hasta n
+    siguiente = a + b
+    Imprimir siguiente
+    a = b
+    b = siguiente</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>n = int(input("Ingrese el número de términos: "))
+a, b = 0, 1
+print(a)
+print(b)
+for i in range(2, n):
+    siguiente = a + b
+    print(siguiente)
+    a = b
+    b = siguiente</code></pre>
+                            <div class="text-sm mt-2">Explicación: Asignación múltiple 'a, b = 0, 1'. 'for' itera, suma y reasigna.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej5-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej5-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio6" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej6-slide1" name="ej6-carousel" class="hidden" checked>
+                <input type="radio" id="ej6-slide2" name="ej6-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 6: Invertir una cadena</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que invierta una cadena de texto.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer cadena
+invertida = ""
+Para cada caracter en cadena desde el final hasta el inicio
+    invertida = invertida + caracter
+Imprimir invertida</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>cadena = input("Ingrese una cadena: ")
+invertida = cadena[::-1]
+print("Cadena invertida:", invertida)</code></pre>
+                            <div class="text-sm mt-2">Explicación: Slicing '[::-1]' invierte la cadena de forma eficiente.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej6-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej6-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio7" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej7-slide1" name="ej7-carousel" class="hidden" checked>
+                <input type="radio" id="ej7-slide2" name="ej7-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 7: Contar vocales en una cadena</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que cuente el número de vocales en una cadena.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer cadena
+contador = 0
+vocales = "aeiouAEIOU"
+Para cada caracter en cadena
+    Si caracter está en vocales
+        contador = contador + 1
+Imprimir contador</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>cadena = input("Ingrese una cadena: ")
+vocales = "aeiouAEIOU"
+contador = 0
+for char in cadena:
+    if char in vocales:
+        contador += 1
+print("Número de vocales:", contador)</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'for char in cadena' itera caracteres. 'if char in vocales' verifica membresía.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej7-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej7-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio8" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej8-slide1" name="ej8-carousel" class="hidden" checked>
+                <input type="radio" id="ej8-slide2" name="ej8-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 8: Verificar palíndromo</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que verifique si una cadena es un palíndromo.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer cadena
+cadena = cadena en minúsculas sin espacios
+Si cadena == cadena invertida
+    Imprimir "Es palíndromo"
+Sino
+    Imprimir "No es palíndromo"</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>cadena = input("Ingrese una cadena: ").lower().replace(" ", "")
+if cadena == cadena[::-1]:
+    print("Es un palíndromo")
+else:
+    print("No es un palíndromo")</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'lower()' minusculas, 'replace()' quita espacios, '[::-1]' invierte, '==' compara.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej8-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej8-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio9" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej9-slide1" name="ej9-carousel" class="hidden" checked>
+                <input type="radio" id="ej9-slide2" name="ej9-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 9: Sumar elementos de una lista</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que sume todos los elementos de una lista.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>lista = [1, 2, 3, 4]
+suma = 0
+Para cada elemento en lista
+    suma = suma + elemento
+Imprimir suma</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>lista = [1, 2, 3, 4]
+suma = 0
+for elemento in lista:
+    suma += elemento
+print("Suma de la lista:", suma)</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'for elemento in lista' itera. '+=' suma y asigna.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej9-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej9-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio10" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej10-slide1" name="ej10-carousel" class="hidden" checked>
+                <input type="radio" id="ej10-slide2" name="ej10-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 10: Encontrar el mínimo en una lista</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que encuentre el valor mínimo en una lista.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>lista = [4, 2, 8, 1]
+minimo = lista[0]
+Para cada elemento en lista
+    Si elemento < minimo
+        minimo = elemento
+Imprimir minimo</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>lista = [4, 2, 8, 1]
+minimo = lista[0]
+for elemento in lista:
+    if elemento < minimo:
+        minimo = elemento
+print("Mínimo en la lista:", minimo)</code></pre>
+                            <div class="text-sm mt-2">Explicación: Inicializa con lista[0]. 'for' itera, 'if' actualiza mínimo si menor.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej10-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej10-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio11" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej11-slide1" name="ej11-carousel" class="hidden" checked>
+                <input type="radio" id="ej11-slide2" name="ej11-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 11: Ordenar una lista (burbuja)</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que ordene una lista usando el método de burbuja.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>lista = [3, 1, 4, 2]
+n = longitud de lista
+Para i desde 0 hasta n-1
+    Para j desde 0 hasta n-i-2
+        Si lista[j] > lista[j+1]
+            Intercambiar lista[j] y lista[j+1]
+Imprimir lista</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>lista = [3, 1, 4, 2]
+n = len(lista)
+for i in range(n):
+    for j in range(0, n-i-1):
+        if lista[j] > lista[j+1]:
+            lista[j], lista[j+1] = lista[j+1], lista[j]
+print("Lista ordenada:", lista)</code></pre>
+                            <div class="text-sm mt-2">Explicación: Dos 'for' anidados comparan e intercambian adyacentes. 'len()' obtiene longitud.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej11-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej11-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio12" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej12-slide1" name="ej12-carousel" class="hidden" checked>
+                <input type="radio" id="ej12-slide2" name="ej12-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 12: Buscar un elemento en una lista</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que busque un elemento en una lista y devuelva su posición.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>lista = [1, 2, 3, 4]
+elemento = 3
+posicion = -1
+Para i desde 0 hasta longitud de lista - 1
+    Si lista[i] == elemento
+        posicion = i
+        Salir
+Si posicion != -1
+    Imprimir "Encontrado en posición" posicion
+Sino
+    Imprimir "No encontrado"</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>lista = [1, 2, 3, 4]
+elemento = 3
+posicion = -1
+for i in range(len(lista)):
+    if lista[i] == elemento:
+        posicion = i
+        break
+if posicion != -1:
+    print("Encontrado en posición:", posicion)
+else:
+    print("No encontrado")</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'range(len(lista))' itera índices. 'break' sale al encontrar.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej12-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej12-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio13" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej13-slide1" name="ej13-carousel" class="hidden" checked>
+                <input type="radio" id="ej13-slide2" name="ej13-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 13: Calcular área de un círculo</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que calcule el área de un círculo dado su radio.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer radio
+pi = 3.1416
+area = pi * radio * radio
+Imprimir area</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>radio = float(input("Ingrese el radio: "))
+pi = 3.1416
+area = pi * radio ** 2
+print("Área del círculo:", area)</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'float()' para decimales. '**' es potencia.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej13-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej13-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio14" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej14-slide1" name="ej14-carousel" class="hidden" checked>
+                <input type="radio" id="ej14-slide2" name="ej14-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 14: Convertir Celsius a Fahrenheit</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que convierta grados Celsius a Fahrenheit.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer celsius
+fahrenheit = (celsius * 9/5) + 32
+Imprimir fahrenheit</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>celsius = float(input("Ingrese temperatura en Celsius: "))
+fahrenheit = (celsius * 9/5) + 32
+print("Temperatura en Fahrenheit:", fahrenheit)</code></pre>
+                            <div class="text-sm mt-2">Explicación: Fórmula matemática simple con operaciones aritméticas.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej14-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej14-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio15" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej15-slide1" name="ej15-carousel" class="hidden" checked>
+                <input type="radio" id="ej15-slide2" name="ej15-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 15: Generar tabla de multiplicar</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que genere la tabla de multiplicar de un número.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer número
+Para i desde 1 hasta 10
+    resultado = número * i
+    Imprimir número "x" i "=" resultado</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>numero = int(input("Ingrese un número: "))
+for i in range(1, 11):
+    print(numero, "x", i, "=", numero * i)</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'for' itera 1 a 10. '*' multiplica, 'print()' muestra formateado.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej15-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej15-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio16" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej16-slide1" name="ej16-carousel" class="hidden" checked>
+                <input type="radio" id="ej16-slide2" name="ej16-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 16: Contar dígitos en un número</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que cuente los dígitos de un número.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer número
+contador = 0
+Mientras número > 0
+    número = número / 10 (entero)
+    contador = contador + 1
+Imprimir contador</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>numero = int(input("Ingrese un número: "))
+contador = 0
+while numero > 0:
+    numero //= 10
+    contador += 1
+print("Número de dígitos:", contador)</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'while' loop hasta 0. '//=' divide entero y asigna.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej16-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej16-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio17" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej17-slide1" name="ej17-carousel" class="hidden" checked>
+                <input type="radio" id="ej17-slide2" name="ej17-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 17: Verificar si un número es primo</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que verifique si un número es primo.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer número
+Si número <= 1
+    No es primo
+Sino
+    es_primo = verdadero
+    Para i desde 2 hasta raíz cuadrada de número
+        Si número modulo i == 0
+            es_primo = falso
+            Salir
+    Si es_primo
+        Imprimir "Es primo"
+    Sino
+        Imprimir "No es primo"</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>import math
+numero = int(input("Ingrese un número: "))
+if numero <= 1:
+    print("No es primo")
+else:
+    es_primo = True
+    for i in range(2, int(math.sqrt(numero)) + 1):
+        if numero % i == 0:
+            es_primo = False
+            break
+    if es_primo:
+        print("Es primo")
+    else:
+        print("No es primo")</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'import math' para 'sqrt()'. 'for' verifica divisores hasta raíz cuadrada. 'break' optimiza.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej17-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej17-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio18" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej18-slide1" name="ej18-carousel" class="hidden" checked>
+                <input type="radio" id="ej18-slide2" name="ej18-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 18: Calcular MCD de dos números</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que calcule el Máximo Común Divisor (MCD) de dos números.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer a, b
+Mientras b != 0
+    temp = b
+    b = a modulo b
+    a = temp
+Imprimir a</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>a = int(input("Ingrese el primer número: "))
+b = int(input("Ingrese el segundo número: "))
+while b != 0:
+    temp = b
+    b = a % b
+    a = temp
+print("MCD:", a)</code></pre>
+                            <div class="text-sm mt-2">Explicación: Algoritmo de Euclides con 'while' y '%' para módulo.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej18-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej18-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio19" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej19-slide1" name="ej19-carousel" class="hidden" checked>
+                <input type="radio" id="ej19-slide2" name="ej19-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 19: Calcular potencia de un número</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que calcule la potencia de un número (base^exponente).</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer base, exponente
+resultado = 1
+Para i desde 1 hasta exponente
+    resultado = resultado * base
+Imprimir resultado</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>base = int(input("Ingrese la base: "))
+exponente = int(input("Ingrese el exponente: "))
+resultado = 1
+for i in range(exponente):
+    resultado *= base
+print("Potencia:", resultado)</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'for' multiplica repetidamente con '*='.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej19-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej19-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+        <section id="ejercicio20" class="mb-10">
+            <div class="carousel relative w-full h-auto overflow-hidden bg-gray-900">
+                <input type="radio" id="ej20-slide1" name="ej20-carousel" class="hidden" checked>
+                <input type="radio" id="ej20-slide2" name="ej20-carousel" class="hidden">
+                <div class="slides flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="slide-title text-3xl mb-5">Ejercicio 20: Imprimir patrón de estrellas (triángulo)</div>
+                        <div class="concept-desc text-base mb-5">Crea un algoritmo que imprima un triángulo de estrellas dado un número de filas.</div>
+                    </div>
+                    <div class="slide w-1/2 p-5 overflow-y-auto bg-gray-900">
+                        <div class="example mb-5">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Pseudocódigo:</div>
+                            <pre><code>Leer filas
+Para i desde 1 hasta filas
+    Para j desde 1 hasta i
+        Imprimir "*"
+    Imprimir línea nueva</code></pre>
+                        </div>
+                        <div class="example">
+                            <div class="example-title text-yellow-400 text-lg mb-2">Implementación en Python:</div>
+                            <pre><code>filas = int(input("Ingrese el número de filas: "))
+for i in range(1, filas + 1):
+    for j in range(i):
+        print("*", end="")
+    print()</code></pre>
+                            <div class="text-sm mt-2">Explicación: 'for' anidado imprime '*'. 'end=""' evita saltos, 'print()' nueva línea.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <label for="ej20-slide1" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                    <label for="ej20-slide2" class="w-3 h-3 bg-white rounded-full cursor-pointer hover:bg-yellow-400 transition"></label>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

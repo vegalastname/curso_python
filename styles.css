@@ -1,0 +1,53 @@
+body {
+    font-family: 'Fira Code', monospace;
+    scroll-behavior: smooth;
+}
+
+pre code {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #abb2bf;
+    background: #282c34;
+}
+
+aside {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+aside::-webkit-scrollbar {
+    display: none;
+}
+
+/* Accordion expansion */
+input[type="checkbox"]:checked + label + ul {
+    max-height: 500px; /* Adjust if needed for more content */
+}
+
+/* Highlight active sub-link */
+nav a.active {
+    color: #3B82F6; /* blue-500 */
+    font-weight: bold;
+}
+
+/* Highlight active tema label */
+label.active-tema {
+    color: #EAB308; /* yellow-400 */
+    background-color: #1F2937; /* gray-800 */
+}
+
+/* Carousel slide transitions */
+.carousel input[id$="-slide1"]:checked ~ .slides {
+    transform: translateX(0);
+}
+
+.carousel input[id$="-slide2"]:checked ~ .slides {
+    transform: translateX(-50%);
+}
+
+/* Active dot indicator */
+.carousel input[id$="-slide1"]:checked ~ .absolute label[for$="-slide1"],
+.carousel input[id$="-slide2"]:checked ~ .absolute label[for$="-slide2"] {
+    background-color: #EAB308; /* yellow-400 */
+}
