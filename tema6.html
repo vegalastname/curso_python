@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 6: Tutorial de Machine Learning Paso a Paso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white flex min-h-screen">
+    <aside class="w-60 p-5 fixed top-5 left-5 bottom-5 overflow-y-auto z-10">
+        <h1 class="text-xl mb-4">Curso de <span class="text-yellow-400">PY</span><span class="text-blue-500">THON</span> + ML</h1>
+        <h2 class="text-blue-500 text-lg mb-4">Índice del Curso</h2>
+        <nav>
+            <ul>
+                <!-- ...otros temas... -->
+                <li>
+                    <input type="checkbox" id="tema6" class="hidden" checked>
+                    <label for="tema6" class="block cursor-pointer p-2 hover:bg-gray-800 transition active-tema">Tema 6: Tutorial de Machine Learning</label>
+                    <ul class="max-h-[500px] overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="#section22" class="block p-2 hover:text-blue-500 transition">Instalación de Librerías</a></li>
+                        <li><a href="#section23" class="block p-2 hover:text-blue-500 transition">Obtención del Dataset</a></li>
+                        <li><a href="#section24" class="block p-2 hover:text-blue-500 transition">Visualización y Análisis</a></li>
+                        <li><a href="#section25" class="block p-2 hover:text-blue-500 transition">Preparación y Transformación</a></li>
+                        <li><a href="#section26" class="block p-2 hover:text-blue-500 transition">Entrenamiento y Evaluación</a></li>
+                        <li><a href="#section27" class="block p-2 hover:text-blue-500 transition">Resumen y Reflexiones</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="flex-1 ml-72 p-5 overflow-y-auto bg-gray-900 border-l border-white">
+        <!-- Instalación de librerías -->
+        <section id="section22" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Instalación de Librerías</div>
+            <div class="mb-4">
+                Para trabajar con Machine Learning en Python, necesitas instalar las siguientes librerías:
+            </div>
+            <pre><code>pip install pandas numpy matplotlib scikit-learn</code></pre>
+            <div class="mt-4 text-sm text-yellow-400">
+                Tip: Si usas Jupyter Notebook, puedes anteponer <code>!</code> al comando.
+            </div>
+        </section>
+
+        <!-- Obtención del dataset -->
+        <section id="section23" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Obtención del Dataset</div>
+            <div class="mb-4">
+                Usaremos el dataset <span class="text-yellow-400 font-bold">"Auto MPG"</span> de UCI Machine Learning Repository, que contiene información sobre consumo de combustible de autos de distintas marcas y años.
+            </div>
+            <div class="mb-2">
+                <a href="https://archive.ics.uci.edu/ml/datasets/auto+mpg" target="_blank" class="text-blue-500 underline">Ver descripción del dataset</a>
+            </div>
+            <pre><code class="language-python">
+import pandas as pd
+
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data"
+columnas = ["mpg", "cylinders", "displacement", "horsepower", "weight", "acceleration", "model_year", "origin", "car_name"]
+df = pd.read_csv(url, delim_whitespace=True, names=columnas, na_values='?')
+df.head()
+            </code></pre>
+        </section>
+
+        <!-- Visualización y análisis -->
+        <section id="section24" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Visualización y Análisis de los Datos</div>
+            <div class="mb-4">
+                Veamos cómo se distribuyen las variables y si hay valores faltantes:
+            </div>
+            <pre><code class="language-python">
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+print(df.info())
+print(df.isnull().sum())
+
+# Histograma de la variable objetivo (mpg)
+plt.figure(figsize=(8,4))
+sns.histplot(df['mpg'], bins=20, kde=True)
+plt.title('Distribución de MPG')
+plt.xlabel('Millas por galón (mpg)')
+plt.show()
+            </code></pre>
+            <div class="mt-4">
+                <span class="text-yellow-400 font-bold">Variable dependiente:</span> <code>mpg</code> (Millas por galón, eficiencia del auto)<br>
+                <span class="text-yellow-400 font-bold">Features:</span> <code>cylinders, displacement, horsepower, weight, acceleration, model_year, origin</code>
+            </div>
+        </section>
+
+        <!-- Preparación y transformación -->
+        <section id="section25" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Preparación y Transformación de los Datos</div>
+            <div class="mb-4">
+                Limpiamos los datos, convertimos variables categóricas y separamos en entrenamiento y test:
+            </div>
+            <pre><code class="language-python">
+# Eliminar filas con valores faltantes
+df = df.dropna()
+
+# Convertir 'origin' a variable categórica
+df['origin'] = df['origin'].replace({1: 'USA', 2: 'Europe', 3: 'Japan'})
+df = pd.get_dummies(df, columns=['origin'], drop_first=True)
+
+# Separar variables
+X = df.drop(['mpg', 'car_name'], axis=1)
+y = df['mpg']
+
+# Dividir en entrenamiento y test
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+            </code></pre>
+        </section>
+
+        <!-- Entrenamiento y evaluación -->
+        <section id="section26" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Entrenamiento y Evaluación del Modelo</div>
+            <div class="mb-4">
+            </div>
+            <pre><code class="language-python">
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Entrenar modelo
+modelo = LinearRegression()
+modelo.fit(X_train, y_train)
+
+# Predicciones
+y_pred_train = modelo.predict(X_train)
+y_pred_test = modelo.predict(X_test)
+
+# Evaluación
+print("MSE (train):", mean_squared_error(y_train, y_pred_train))
+print("MSE (test):", mean_squared_error(y_test, y_pred_test))
+print("R2 (train):", r2_score(y_train, y_pred_train))
+print("R2 (test):", r2_score(y_test, y_pred_test))
+
+# Visualización de resultados
+plt.figure(figsize=(8,4))
+plt.scatter(y_test, y_pred_test, alpha=0.7)
+plt.xlabel("MPG Real")
+plt.ylabel("MPG Predicho")
+plt.title("Predicción de MPG en datos de test")
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--')
+plt.show()
+            </code></pre>
+            <div class="mt-4">
+                <span class="text-yellow-400 font-bold">¿Por qué Regresión Lineal?</span> Es simple, fácil de interpretar y suele ser un buen punto de partida para problemas de regresión. Sin embargo, <span class="text-red-400 font-bold">en el mundo real rara vez es suficiente</span> porque solo puede modelar relaciones lineales entre variables. La mayoría de los problemas reales, como el consumo de combustible de autos, dependen de relaciones complejas y no lineales entre las variables.
+            </div>
+            <div class="mt-4">
+                <span class="text-blue-400 font-bold">¿Por qué usar SVR?</span> <br>
+                <strong>SVR (Support Vector Regression)</strong> es una técnica basada en máquinas de soporte vectorial que permite modelar relaciones no lineales entre las variables. SVR busca encontrar una función que tenga como máximo un cierto error permitido para todos los puntos de entrenamiento, y al mismo tiempo sea lo más plana posible. Utiliza kernels para transformar los datos y encontrar patrones complejos.<br><br>
+                <span class="text-yellow-400 font-bold">Ventajas de SVR en este dataset:</span>
+                <ul class="list-disc pl-6 mt-2">
+                    <li>Puede capturar relaciones no lineales entre las características y el consumo de combustible.</li>
+                    <li>Es robusto ante outliers y funciona bien con datasets pequeños o medianos.</li>
+                    <li>Permite ajustar el margen de tolerancia al error y la complejidad del modelo.</li>
+                </ul>
+            </div>
+            <div class="mt-4">
+                <span class="text-blue-400 font-bold">Ejemplo de uso de SVR:</span>
+            </div>
+            <pre><code class="language-python">
+from sklearn.svm import SVR
+from sklearn.preprocessing import StandardScaler
+
+# SVR requiere que los datos estén escalados
+scaler_X = StandardScaler()
+scaler_y = StandardScaler()
+
+X_train_scaled = scaler_X.fit_transform(X_train)
+X_test_scaled = scaler_X.transform(X_test)
+y_train_scaled = scaler_y.fit_transform(y_train.values.reshape(-1,1)).ravel()
+
+# Entrenar SVR
+svr = SVR(kernel='rbf', C=100, gamma=0.1, epsilon=0.1)
+svr.fit(X_train_scaled, y_train_scaled)
+
+# Predicciones (escaladas)
+y_pred_test_scaled = svr.predict(X_test_scaled)
+y_pred_test = scaler_y.inverse_transform(y_pred_test_scaled.reshape(-1,1)).ravel()
+
+print("MSE (test) SVR:", mean_squared_error(y_test, y_pred_test))
+print("R2 (test) SVR:", r2_score(y_test, y_pred_test))
+            </code></pre>
+            <div class="mt-4">
+                <span class="text-green-400 font-bold">Conclusión:</span> Para problemas reales donde las relaciones entre variables no son lineales, como en este dataset de autos, SVR y otros modelos avanzados suelen ofrecer mejores resultados que la regresión lineal tradicional.
+            </div>
+        </section>
+
+        <!-- Resumen y reflexiones -->
+        <section id="section27" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Resumen y Reflexiones</div>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Instalamos las librerías esenciales para ML en Python.</li>
+                <li>Descargamos y analizamos un dataset real de autos.</li>
+                <li>Preparamos y transformamos los datos para el modelo.</li>
+                <li>Entrenamos un modelo de regresión lineal y evaluamos su desempeño.</li>
+            </ul>
+            <div class="mb-2">
+                <span class="text-yellow-400 font-bold">Reflexión:</span> El proceso de Machine Learning es iterativo. Siempre busca entender tus datos, probar diferentes modelos y ajustar tus transformaciones para mejorar los resultados. ¡La práctica y la curiosidad son clave!
+            </div>
+            <div class="mt-4 text-blue-500">
+                ¿Listo para probar con tus propios datos? ¡Experimenta cambiando el modelo o usando otros datasets!
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

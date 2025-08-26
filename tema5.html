@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 5: Introducción al Machine Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white flex min-h-screen">
+    <aside class="w-60 p-5 fixed top-5 left-5 bottom-5 overflow-y-auto z-10">
+        <h1 class="text-xl mb-4">Curso de <span class="text-yellow-400">PY</span><span class="text-blue-500">THON</span> + ML</h1>
+        <h2 class="text-blue-500 text-lg mb-4">Índice del Curso</h2>
+        <nav>
+            <ul>
+                <li>
+                    <input type="checkbox" id="tema1" class="hidden">
+                    <label for="tema1" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 1: Historia y Cronología de Python</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema1.html#section1" class="block p-2 hover:text-blue-500 transition">Historia y Cronología</a></li>
+                        <li><a href="tema1.html#section2" class="block p-2 hover:text-blue-500 transition">Gráfica TIOBE</a></li>
+                        <li><a href="tema1.html#section3" class="block p-2 hover:text-blue-500 transition">Rubros donde Python es Utilizado</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema2" class="hidden">
+                    <label for="tema2" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 2: Conceptos Básicos de Python</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema2.html#section4" class="block p-2 hover:text-blue-500 transition">Tipos de Datos</a></li>
+                        <li><a href="tema2.html#section5" class="block p-2 hover:text-blue-500 transition">Estructuras de Datos</a></li>
+                        <li><a href="tema2.html#section6" class="block p-2 hover:text-blue-500 transition">Operadores Aritméticos</a></li>
+                        <li><a href="tema2.html#section7" class="block p-2 hover:text-blue-500 transition">Operadores Lógicos</a></li>
+                        <li><a href="tema2.html#section8" class="block p-2 hover:text-blue-500 transition">Condicionales</a></li>
+                        <li><a href="tema2.html#section9" class="block p-2 hover:text-blue-500 transition">Estructuras de Control</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema3" class="hidden">
+                    <label for="tema3" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 3: Funciones y Algoritmos</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema3.html#section10" class="block p-2 hover:text-blue-500 transition">Qué es una Función</a></li>
+                        <li><a href="tema3.html#section11" class="block p-2 hover:text-blue-500 transition">Qué es un Algoritmo</a></li>
+                        <li><a href="tema3.html#section12" class="block p-2 hover:text-blue-500 transition">Qué es el Pseudocódigo</a></li>
+                        <li><a href="tema3.html#section13" class="block p-2 hover:text-blue-500 transition">Ejercicio FizzBuzz</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema4" class="hidden">
+                    <label for="tema4" class="block cursor-pointer p-2 hover:bg-gray-800 transition">Tema 4: Ejercicios de Algoritmos</label>
+                    <ul class="max-h-0 overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="tema4.html#ejercicio1" class="block p-2 hover:text-blue-500 transition">Ejercicio 1: Sumar dos números</a></li>
+                        <li><a href="tema4.html#ejercicio2" class="block p-2 hover:text-blue-500 transition">Ejercicio 2: Encontrar el máximo de dos números</a></li>
+                        <li><a href="tema4.html#ejercicio3" class="block p-2 hover:text-blue-500 transition">Ejercicio 3: Verificar si un número es par o impar</a></li>
+                        <li><a href="tema4.html#ejercicio4" class="block p-2 hover:text-blue-500 transition">Ejercicio 4: Calcular factorial</a></li>
+                        <li><a href="tema4.html#ejercicio5" class="block p-2 hover:text-blue-500 transition">Ejercicio 5: Secuencia de Fibonacci</a></li>
+                        <li><a href="tema4.html#ejercicio6" class="block p-2 hover:text-blue-500 transition">Ejercicio 6: Invertir una cadena</a></li>
+                        <li><a href="tema4.html#ejercicio7" class="block p-2 hover:text-blue-500 transition">Ejercicio 7: Contar vocales en una cadena</a></li>
+                        <li><a href="tema4.html#ejercicio8" class="block p-2 hover:text-blue-500 transition">Ejercicio 8: Verificar palíndromo</a></li>
+                        <li><a href="tema4.html#ejercicio9" class="block p-2 hover:text-blue-500 transition">Ejercicio 9: Sumar elementos de una lista</a></li>
+                        <li><a href="tema4.html#ejercicio10" class="block p-2 hover:text-blue-500 transition">Ejercicio 10: Encontrar el mínimo en una lista</a></li>
+                        <li><a href="tema4.html#ejercicio11" class="block p-2 hover:text-blue-500 transition">Ejercicio 11: Ordenar una lista (burbuja)</a></li>
+                        <li><a href="tema4.html#ejercicio12" class="block p-2 hover:text-blue-500 transition">Ejercicio 12: Buscar un elemento en una lista</a></li>
+                        <li><a href="tema4.html#ejercicio13" class="block p-2 hover:text-blue-500 transition">Ejercicio 13: Calcular área de un círculo</a></li>
+                        <li><a href="tema4.html#ejercicio14" class="block p-2 hover:text-blue-500 transition">Ejercicio 14: Convertir Celsius a Fahrenheit</a></li>
+                        <li><a href="tema4.html#ejercicio15" class="block p-2 hover:text-blue-500 transition">Ejercicio 15: Generar tabla de multiplicar</a></li>
+                        <li><a href="tema4.html#ejercicio16" class="block p-2 hover:text-blue-500 transition">Ejercicio 16: Contar dígitos en un número</a></li>
+                        <li><a href="tema4.html#ejercicio17" class="block p-2 hover:text-blue-500 transition">Ejercicio 17: Verificar si un número es primo</a></li>
+                        <li><a href="tema4.html#ejercicio18" class="block p-2 hover:text-blue-500 transition">Ejercicio 18: Calcular MCD de dos números</a></li>
+                        <li><a href="tema4.html#ejercicio19" class="block p-2 hover:text-blue-500 transition">Ejercicio 19: Calcular potencia de un número</a></li>
+                        <li><a href="tema4.html#ejercicio20" class="block p-2 hover:text-blue-500 transition">Ejercicio 20: Imprimir patrón de estrellas (triángulo)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="tema5" class="hidden" checked>
+                    <label for="tema5" class="block cursor-pointer p-2 hover:bg-gray-800 transition active-tema">Tema 5: Introducción al Machine Learning</label>
+                    <ul class="max-h-[500px] overflow-hidden transition-max-height duration-300 pl-5">
+                        <li><a href="#section17" class="block p-2 hover:text-blue-500 transition">¿Qué es Machine Learning?</a></li>
+                        <li><a href="#section18" class="block p-2 hover:text-blue-500 transition">Conceptos Clave</a></li>
+                        <li><a href="#section19" class="block p-2 hover:text-blue-500 transition">Aplicaciones Actuales</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="flex-1 ml-72 p-5 overflow-y-auto bg-gray-900 border-l border-white">
+        <section id="section17" class="mb-10">
+            <div class="slide-header">
+                <small class="text-yellow-400 text-sm">¿QUÉ ES?</small>
+                <div class="slide-title text-3xl">Introducción al Machine Learning</div>
+            </div>
+            <div class="dato-curioso text-yellow-400 text-base mt-4 mb-5">
+                Dato Curioso: El término "Machine Learning" fue acuñado por Arthur Samuel en 1959, quien creó uno de los primeros programas que aprendía a jugar damas.
+            </div>
+            <div class="text-base mt-4">
+                <strong class="text-yellow-400">Machine Learning (ML)</strong> es una rama de la inteligencia artificial que permite a las computadoras aprender de datos y mejorar su desempeño sin ser programadas explícitamente para cada tarea.<br><br>
+                En vez de seguir instrucciones fijas, los algoritmos de ML identifican patrones y hacen predicciones o decisiones basadas en datos.
+            </div>
+        </section>
+        <section id="section18" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Conceptos Clave en Machine Learning</div>
+            <div class="grid grid-cols-2 gap-5">
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Datos</div>
+                    <div class="text-sm">La materia prima del ML. Los algoritmos aprenden a partir de grandes volúmenes de datos (números, texto, imágenes, etc.).</div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Modelo</div>
+                    <div class="text-sm">Una representación matemática que aprende patrones de los datos para hacer predicciones.</div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Entrenamiento</div>
+                    <div class="text-sm">Proceso donde el modelo ajusta sus parámetros usando datos conocidos (de entrenamiento).</div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Predicción</div>
+                    <div class="text-sm">El modelo usa lo aprendido para predecir resultados sobre nuevos datos.</div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Supervisado vs No Supervisado</div>
+                    <div class="text-sm">
+                        <strong>Supervisado:</strong> El modelo aprende con datos etiquetados (ej: imágenes de gatos/perros).<br>
+                        <strong>No Supervisado:</strong> El modelo encuentra patrones sin etiquetas (ej: agrupación de clientes).
+                    </div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Overfitting</div>
+                    <div class="text-sm">Cuando el modelo aprende demasiado bien los datos de entrenamiento y falla con datos nuevos. ¡Evitarlo es clave!</div>
+                </div>
+            </div>
+        </section>
+        <section id="section19" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Aplicaciones Actuales del Machine Learning</div>
+            <div class="grid grid-cols-2 gap-5">
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Reconocimiento de Imágenes</div>
+                    <div class="text-sm">Desde filtros de Instagram hasta diagnósticos médicos por imágenes.</div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Procesamiento de Lenguaje Natural</div>
+                    <div class="text-sm">Traducción automática, chatbots (como ChatGPT), análisis de sentimientos en redes sociales.</div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Recomendadores</div>
+                    <div class="text-sm">Netflix, YouTube y Spotify usan ML para sugerir contenido personalizado.</div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Autos Autónomos</div>
+                    <div class="text-sm">Tesla y Waymo emplean ML para interpretar el entorno y tomar decisiones en tiempo real.</div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Detección de Fraudes</div>
+                    <div class="text-sm">Bancos y fintechs usan ML para identificar transacciones sospechosas.</div>
+                </div>
+                <div class="border border-white p-3">
+                    <div class="text-blue-500 text-lg mb-2">Salud Personalizada</div>
+                    <div class="text-sm">Predicción de enfermedades, medicina personalizada y análisis de genomas.</div>
+                </div>
+            </div>
+            <div class="mt-8 text-base">
+                <span class="text-yellow-400 font-bold">En resumen:</span> El Machine Learning está presente en tu día a día, desde el desbloqueo facial de tu teléfono hasta las recomendaciones de compras en línea.
+            </div>
+        </section>
+        <section id="section20" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Pipeline Básico de Machine Learning</div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 mt-8">
+                <!-- Paso 1 -->
+                <div class="flex flex-col items-center w-full md:w-1/6">
+                    <div class="bg-yellow-400 text-black rounded-full w-14 h-14 flex items-center justify-center text-2xl font-bold mb-2 shadow-lg">1</div>
+                    <div class="font-bold text-yellow-400 mb-1">Recolección de Datos</div>
+                    <div class="text-sm text-center">Obtener datos relevantes (sensores, imágenes, registros, etc.) que representen el problema a resolver.</div>
+                </div>
+                <div class="hidden md:block text-4xl text-yellow-400">→</div>
+                <!-- Paso 2 -->
+                <div class="flex flex-col items-center w-full md:w-1/6">
+                    <div class="bg-yellow-400 text-black rounded-full w-14 h-14 flex items-center justify-center text-2xl font-bold mb-2 shadow-lg">2</div>
+                    <div class="font-bold text-yellow-400 mb-1">Procesamiento y Limpieza</div>
+                    <div class="text-sm text-center">Limpiar, transformar y preparar los datos (eliminar errores, normalizar, rellenar valores faltantes).</div>
+                </div>
+                <div class="hidden md:block text-4xl text-yellow-400">→</div>
+                <!-- Paso 3 -->
+                <div class="flex flex-col items-center w-full md:w-1/6">
+                    <div class="bg-yellow-400 text-black rounded-full w-14 h-14 flex items-center justify-center text-2xl font-bold mb-2 shadow-lg">3</div>
+                    <div class="font-bold text-yellow-400 mb-1">Selección de Características</div>
+                    <div class="text-sm text-center">Elegir las variables más relevantes para el modelo (feature engineering).</div>
+                </div>
+                <div class="hidden md:block text-4xl text-yellow-400">→</div>
+                <!-- Paso 4 -->
+                <div class="flex flex-col items-center w-full md:w-1/6">
+                    <div class="bg-yellow-400 text-black rounded-full w-14 h-14 flex items-center justify-center text-2xl font-bold mb-2 shadow-lg">4</div>
+                    <div class="font-bold text-yellow-400 mb-1">Entrenamiento del Modelo</div>
+                    <div class="text-sm text-center">Aplicar algoritmos de ML para que el modelo aprenda patrones a partir de los datos.</div>
+                </div>
+                <div class="hidden md:block text-4xl text-yellow-400">→</div>
+                <!-- Paso 5 -->
+                <div class="flex flex-col items-center w-full md:w-1/6">
+                    <div class="bg-yellow-400 text-black rounded-full w-14 h-14 flex items-center justify-center text-2xl font-bold mb-2 shadow-lg">5</div>
+                    <div class="font-bold text-yellow-400 mb-1">Evaluación</div>
+                    <div class="text-sm text-center">Medir el desempeño del modelo con datos no vistos (validación y métricas).</div>
+                </div>
+                <div class="hidden md:block text-4xl text-yellow-400">→</div>
+                <!-- Paso 6 -->
+                <div class="flex flex-col items-center w-full md:w-1/6">
+                    <div class="bg-yellow-400 text-black rounded-full w-14 h-14 flex items-center justify-center text-2xl font-bold mb-2 shadow-lg">6</div>
+                    <div class="font-bold text-yellow-400 mb-1">Despliegue y Monitoreo</div>
+                    <div class="text-sm text-center">Implementar el modelo en producción y monitorear su desempeño real, ajustando si es necesario.</div>
+                </div>
+            </div>
+            <div class="mt-8 text-base">
+                <span class="text-yellow-400 font-bold">Resumen:</span> El pipeline de ML es un proceso iterativo: si el modelo no cumple los objetivos, se regresa a pasos anteriores para mejorar.
+            </div>
+        </section>
+
+        <section id="section21" class="mb-10">
+            <div class="slide-title text-3xl mb-5">Ejemplo: Pipeline de ML para Navegación Autónoma en la Industria Automotriz</div>
+            <div class="mb-6 text-base">
+                Imagina que trabajas en Ford y quieres crear un sistema de navegación autónoma similar al de Tesla o Waymo. El pipeline sería así:
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                <ol class="list-decimal list-inside space-y-4">
+                    <li>
+                        <span class="text-yellow-400 font-bold">Recolección de Datos:</span>
+                        <div class="ml-4 text-sm">
+                            Se instalan sensores (cámaras, LIDAR, radar, GPS) en vehículos de prueba para capturar datos de conducción en diferentes condiciones (día/noche, lluvia, ciudad, carretera).
+                        </div>
+                    </li>
+                    <li>
+                        <span class="text-yellow-400 font-bold">Procesamiento y Limpieza:</span>
+                        <div class="ml-4 text-sm">
+                            Se sincronizan y limpian los datos de los sensores, eliminando lecturas erróneas y alineando las señales temporales.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="text-yellow-400 font-bold">Selección de Características:</span>
+                        <div class="ml-4 text-sm">
+                            Se extraen variables clave como la posición de peatones, señales de tráfico, carriles, velocidad, distancia a obstáculos, etc.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="text-yellow-400 font-bold">Entrenamiento del Modelo:</span>
+                        <div class="ml-4 text-sm">
+                            Se usan algoritmos de Deep Learning (como redes neuronales convolucionales para visión y redes recurrentes para series temporales) para que el modelo aprenda a reconocer objetos y tomar decisiones de conducción.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="text-yellow-400 font-bold">Evaluación:</span>
+                        <div class="ml-4 text-sm">
+                            Se prueba el modelo en escenarios simulados y en pistas controladas, midiendo métricas como precisión en detección de obstáculos y seguridad en maniobras.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="text-yellow-400 font-bold">Despliegue y Monitoreo:</span>
+                        <div class="ml-4 text-sm">
+                            El modelo se integra en el software del vehículo y se monitorea en tiempo real. Si detecta fallos o nuevos escenarios, se recolectan más datos y se mejora el modelo.
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="mt-8 text-base">
+                <span class="text-blue-500 font-bold">Reflexión:</span> Este ejemplo muestra cómo el pipeline de ML se aplica en un caso real. La clave del éxito está en cada paso del pipeline, asegurando calidad y precisión en el modelo final.
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
